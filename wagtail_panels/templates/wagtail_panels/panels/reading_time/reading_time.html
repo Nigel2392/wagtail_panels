@@ -1,0 +1,14 @@
+{% load i18n wagtailadmin_tags %}
+{% translate "Refresh" as refresh %}
+<div class="reading-time-panel" id="reading-time-panel-{{instance.id}}">
+    <div class="reading-time-panel-data">
+        <p>
+            {% icon name="rotate" classname="icon middle" title=refresh %}
+            <strong>{% translate "Reading Time" %}:</strong>
+            <i data-reading-time-data> {{ instance.reading_time }}</i>
+        </p>
+    </div>
+</div>
+<script>
+    window.initReadingTimePanel("reading-time-panel-{{instance.id}}")
+</script>

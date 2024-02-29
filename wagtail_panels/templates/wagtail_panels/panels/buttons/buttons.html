@@ -1,0 +1,6 @@
+{% load i18n %}
+<div class="buttons-panel">
+    {% for button in buttons %}
+        {{ button.render|safe }}
+    {% endfor %}
+</div>

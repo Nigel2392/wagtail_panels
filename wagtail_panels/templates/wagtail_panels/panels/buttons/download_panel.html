@@ -1,0 +1,8 @@
+{% load i18n %}
+<div class="download-file-panel">
+    {% for file_field_attr, obj in model_fields.items %}
+        {% if obj.has_file %}
+            <a class="{{self.classes|default:"button button-primary"}}" href="{% url "download_panel:panel" content_type.pk instance.pk file_field_attr %}" target="_blank">{% blocktrans with attr=obj.verbose_name %}Download {{attr}}{%endblocktrans%}</a>
+        {% endif %}
+    {% endfor %}
+</div>
